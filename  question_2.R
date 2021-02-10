@@ -66,7 +66,7 @@ write.csv(death_count,'death_count.csv')   #saving for usage in Q3
  
 # Merging shape file with the covid death counts data
 death_count <- right_join(chicago_zip, death_count, by = "zip")
-
+st_write(death_count, 'death_count_sf.csv', layer_options = "GEOMETRY=AS_WKT")   #Outputing SF as dataframe for Q3
 #Plotting Chloropleth 2 - Total COVID death count by Zip Code
 
 chloropleth2 <- ggplot() +
